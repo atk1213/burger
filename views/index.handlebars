@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="text-center">
+      <h1 class="display-4 text-center">Eat Da Burger!</h1>
+    </div>
+  </div>
+</div>
+<div class="container" id="appContent">
+  <div class="row">
+    <div class="col-xs-12 col-md-4" style="overflow:auto;">
+      <h2 class="text-center">Burgers you can eat:</h2>
+      <ul>
+        {{#each burgers}} {{#unless devoured}}
+        <div>
+          <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
+            <button type="submit" class="edibleBurgers"> {{this.burger_name}}</button>
+          </form>
+        </div>
+        {{/unless}} {{/each}}
+      </ul>
+    </div>
+    <div class="col-md-4" style="overflow:auto;">&nbsp;</div>
+    <div class="col-xs-12 col-md-4" style="overflow:auto;">
+      <h2 class="text-center">Burgers you ate:</h2>
+
+      <ul>
+        {{#each burgers}} {{#if devoured}}
+        <div class="devouredBurgers">
+          <div>
+            {{this.burger_name}}
+          </div>
+        </div>
+        {{/if}} {{/each}}
+      </ul>
+    </div>
+  </div>
+  <br>
+  <br> 
+  <div class="row">
+    <div class="col-md-3 ">&nbsp;</div>
+    <div class="col-xs-12 col-md-6 text-center " style="overflow:auto;">
+      <h2>Add a Burger</h2>
+      <form action="/burgers" method="POST">
+        <label for="burger">Burger Name:</label>
+        <input type="text" id="burg" name="burger_name">
+        <button type="submit" class="addButton">Submit</button>
+      </form>
+    </div>
+    <div class="col-md-3 ">&nbsp;</div>
+  </div>
+
+</div>

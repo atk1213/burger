@@ -1,11 +1,11 @@
 var mysql = require("mysql");
 
 var connection = mysql.createConnection({
-  port: 3300,
+  port: 3306,
   host: "localhost",
   user: "root",
   // remember to remove password when uploading
-  password: "",
+  password: "Time2learn1213",
   database: "burgers_db"
 });
 
