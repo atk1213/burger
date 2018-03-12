@@ -5,7 +5,7 @@ var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   // remember to remove password when uploading
-  password: "Time2learn1213",
+  password: "",
   database: "burgers_db"
 });
 
